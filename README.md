@@ -1,2 +1,2 @@
 # k8s-apps
-Quick Deploy Template fir k8s
+k8s deployment configurations used in my Home-lab's Production ENV
