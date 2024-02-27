@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-db-pv
+
+spec:
+  envFrom:
+    - secretRef:
+        name: pv-secret
+  storageClassName: nfs
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 25Gi
+
+  nfs:
+    path:  "{{NFS_PATH}}"
+    server: "{{NFS_IP}}"
