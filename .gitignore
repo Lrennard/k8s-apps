@@ -1,4 +1,4 @@
     ##  Ignore Secret files in all folder's
 homepage/secret.yaml
 
-PersistentVolumes/secret.yaml
+mySQL/secret.yaml
