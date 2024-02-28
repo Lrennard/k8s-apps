@@ -4,15 +4,13 @@ metadata:
   name: nfs-db-pv
 
 spec:
-  envFrom:
-    - secretRef:
-        name: pv-secret
   storageClassName: nfs
+  mountOptions:
+    - nfsvers=4.1
   accessModes:
     - ReadWriteMany
   capacity:
     storage: 25Gi
-
-  nfs:
-    path:  "{{NFS_PATH}}"
-    server: "{{NFS_IP}}"
+  nfs: 
+    path:  /mnt/CH-NAS1/kubeShare/test
+    server: truenas
