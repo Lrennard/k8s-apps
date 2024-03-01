@@ -2,3 +2,5 @@
 homepage/secret.yaml
 
 mySQL/secret.yaml
+
+PersistentVolumes/iscsi_pv.yaml
