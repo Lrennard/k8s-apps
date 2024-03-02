@@ -58,11 +58,11 @@ data:
         header: true
         style: row
         columns: 3
-      Printer's:
+      Printers:
         header: true
         style: row
         columns: 2
-      Internal Net:
+      Internal Network:
         header: true
         style: row
         columns: 5
