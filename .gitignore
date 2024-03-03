@@ -3,4 +3,6 @@ homepage/secret.yaml
 
 mySQL/secret.yaml
 
-PersistentVolumes/iscsi_pv.yaml
+PersistentVolumes/datab-pv.yaml
+
+PersistentVolumes/ukuma-pv.yaml

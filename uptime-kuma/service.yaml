@@ -7,7 +7,7 @@ spec:
   type: NodePort
   ports:
   - port: 3001
-    protocol: TCP
+    nodePort: 30010
+    targetPort: http
   selector:
     app: uptime-kuma
-    
