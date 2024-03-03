@@ -13,9 +13,6 @@ spec:
       labels:
         app: mysql
     spec:
-      securityContext:
-        runAsUser: 1000
-        fsGroup: 1000        
       containers:
       - image: mysql:5.6
         name: mysql
@@ -34,4 +31,4 @@ spec:
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
-          claimName: iscsi-pvc
+          claimName: mysql-pvc
