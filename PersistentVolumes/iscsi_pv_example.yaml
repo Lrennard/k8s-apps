@@ -10,7 +10,7 @@ spec:
     - ReadWriteMany
   iscsi:
     targetPortal: <IQN_TARGET_IP>
-    iqn: <YOUR_IQN>
+    iqn: <YOUR_IQN> 
     lun: 0
     fsType: 'ext4'
     readOnly: false
