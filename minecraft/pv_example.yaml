@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: datab-pv
-  namespace: database
+  name: mc-pv
+  namespace: default
 spec:
   storageClassName: iscsi
   capacity:
-    storage: 250Gi
+    storage: 1Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   iscsi:
     targetPortal: <IP_OR_HOST_OF_IQN>
