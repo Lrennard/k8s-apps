@@ -30,7 +30,7 @@ data:
     title: L3s Internal Dash
 
     background:
-      image: https://cdnb.artstation.com/p/assets/images/images/006/897/659/large/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg
+      image: https://cdnb.artstation.com/p/assets/images/images/006/897/659/large/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg 
       blur: sm # sm, md, xl... see https://tailwindcss.com/docs/backdrop-blur
       saturate: 100 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
       brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
@@ -122,6 +122,8 @@ data:
               type: homeassistant
               url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_url}}"
               key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_API_KEY}}"
+              custom:
+                - state: light.lr_lights
         - Mirror:
             icon: wled.png
             href: "{{HOMEPAGE_VAR_MIRROR_url}}"
@@ -141,7 +143,7 @@ data:
             description: Trilium Notes
         - Guac:
             icon: guacamole.png
-            href: "{{HOMEPAGE_VAR_GUAC_url}}" 
+            href: "{{HOMEPAGE_VAR_GUAC_url}}"
             description: Guac
         - Mesh-Central:
             icon: meshcentral.png
@@ -173,6 +175,10 @@ data:
             icon: uptimekuma.png
             href: "{{HOMEPAGE_VAR_UPTIME_KUMA_url}}"
             description: Uptime Kuma
+            widget:
+              type: uptimekuma
+              url: "{{HOMEPAGE_VAR_UPTIME_KUMA_url}}"
+              slug: up
     - Media:
         - Jelly-Fin:
             icon: jellyfin.png
@@ -181,7 +187,7 @@ data:
             widget:
               type: jellyfin
               url: "{{HOMEPAGE_VAR_JELLY_FIN_url}}"
-              ##key: "{{HOMEPAGE_VAR_JELLY_FIN_API_KEY}}"
+              key: "{{HOMEPAGE_VAR_JELLY_FIN_API_KEY}}"
               enableBlocks: true # optional, defaults to false
               enableNowPlaying: true # optional, defaults to true
         - TransMission:
@@ -277,7 +283,7 @@ data:
               type: portainer
               url: "{{HOMEPAGE_VAR_PORTAINER_url}}"
               env: 1
-  widgets.yaml: |        
+  widgets.yaml: |
     - resources:
         cpu: true
         memory: true
