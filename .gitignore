@@ -10,3 +10,5 @@ mySQL/secret.yaml
 PersistentVolumes/datab-pv.yaml
 
 PersistentVolumes/ukuma-pv.yaml
+
+minecraft/mc-pv.yaml

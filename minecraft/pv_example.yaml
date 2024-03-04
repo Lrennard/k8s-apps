@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: datab-pv
+  namespace: database
+spec:
+  storageClassName: iscsi
+  capacity:
+    storage: 250Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  iscsi:
+    targetPortal: <IP_OR_HOST_OF_IQN>
+    iqn: <IQN>
+    lun: 0
+    fsType: 'ext4'
+    readOnly: false
