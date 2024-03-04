@@ -1,6 +1,10 @@
     ##  Ignore Secret files in all folder's
 homepage/secret.yaml
 
+grafana/secret.yaml
+
+grafana/grafana-pv.yaml
+
 mySQL/secret.yaml
 
 PersistentVolumes/datab-pv.yaml
