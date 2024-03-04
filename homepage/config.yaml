@@ -210,7 +210,7 @@ data:
             widget:
               type: pihole
               url: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
-              ##key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
+              key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
         - Pihole-2:
             icon: pihole.png
             href: "{{HOMEPAGE_VAR_PIHOLE_URL_2}}"
@@ -218,7 +218,7 @@ data:
             widget:
               type: pihole
               url: "{{HOMEPAGE_VAR_PIHOLE_URL_2}}"
-              ##key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_2}}"
+              key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_2}}"
         - Arak24P:
             icon: araknis.png
             href: "{{HOMEPAGE_VAR_ARAK24P_url}}"
@@ -248,8 +248,8 @@ data:
             widget:
               type: proxmox
               url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
-              ##username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-              ##password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+              username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+              password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
               node: teller
         - Turing:
             icon: proxmox.png
@@ -258,8 +258,8 @@ data:
             widget:
               type: proxmox
               url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
-              ##username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-              ##password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+              username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+              password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
               node: pve2
         - Traefik:
             icon: traefik.png
