@@ -1,28 +1,3 @@
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: grafana-pv
-  namespace: monitoring
-spec:
-  storageClassName: iscsi
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  iscsi:
-    targetPortal:
-    valueFrom:
-      secretKeyRef:
-        name: grafana-secret
-        key: targetPortal
-    iqn:
-    valueFrom:
-      secretKeyRef:
-        name: grafana-secret
-        key: iqn
-    lun: 0
-    fsType: 'ext4'
-    readOnly: false
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
