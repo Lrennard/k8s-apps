@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nfs-db-pv
+  name: nfs-pv
 
 spec:
   storageClassName: nfs
@@ -12,5 +12,5 @@ spec:
   capacity:
     storage: 25Gi
   nfs: 
-    path:  /mnt/CH-NAS1/kubeShare/test
+    path:  /mnt/kubeShare/test
     server: truenas
