@@ -1,14 +1,16 @@
     ##  Ignore Secret files in all folder's
-homepage/secret.yaml
-
 grafana/secret.yaml
 
 grafana/grafana-pv.yaml
+
+homepage/secret.yaml
+
+minecraft/mc-pv.yaml
+
+mongoDB/mongodb-pv.yaml
 
 mySQL/secret.yaml
 
 PersistentVolumes/datab-pv.yaml
 
 PersistentVolumes/ukuma-pv.yaml
-
-minecraft/mc-pv.yaml
