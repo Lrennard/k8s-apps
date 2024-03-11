@@ -39,6 +39,20 @@ spec:
             periodSeconds: 10
             failureThreshold: 12
       volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: mc-data
+        - name: data
+          persistentVolumeClaim:
+            claimName: mc-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: mc-javasvc
+  name: mc-java
+spec:
+  ports:
+    - port: 25565
+      targetPort: 25565
+  selector:
+    app: mc-java
+  type: NodePort
