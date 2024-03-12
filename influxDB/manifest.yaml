@@ -54,4 +54,4 @@ spec:
       nodePort: 30086
   selector:
     app: influxdb
-  type: ClusterIP
+  type: NodePort
