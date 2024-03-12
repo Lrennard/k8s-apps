@@ -78,10 +78,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: http
+    - name: http-grafana
       port: 3000
+      targetPort: 3000
       nodePort: 31720
-      targetPort: http
   selector:
     app: grafana
   sessionAffinity: None
