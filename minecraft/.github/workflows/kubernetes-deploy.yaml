@@ -1,0 +1,31 @@
+name: Minecraft Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    env:
+      KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      MC_NODE_PORT: ${{ secrets.MC_NODE_PORT }}
+
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy Minecraft Server
+      run: |
+        echo "Deploying Minecraft Server"
+        # Set the kubeconfig context
+        export KUBECONFIG=$KUBECONFIG
+        # Apply Kubernetes manifests for Minecraft Server deployment
+        kubectl apply -f k8s-apps/minecraft/deployment.yaml
+
+    - name: Test Deployment
+      run: |
+        echo "Testing Minecraft Server Deployment"
+        # Run tests on the deployed server if needed

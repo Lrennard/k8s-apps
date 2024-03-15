@@ -1,8 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: minecraft
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mc-data
+  namespace: minecraft
 spec:
   storageClassName: iscsi
   accessModes:
@@ -17,6 +22,7 @@ metadata:
   labels:
     app: mc-java
   name: mc-java
+  namespace: minecraft
 spec:
   replicas: 1
   serviceName: mc-java
@@ -61,10 +67,12 @@ metadata:
   labels:
     service: mc-java
   name: mc-java
+  namespace: minecraft
 spec:
   ports:
     - port: 25565
       targetPort: 25565
+      nodePort: {{ secrets.MC_NODE_PORT }}
   selector:
     app: mc-java
   type: NodePort
