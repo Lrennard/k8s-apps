@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: self-hosted
     env:
-      KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
       MC_NODE_PORT: ${{ secrets.MC_NODE_PORT }}
 
 
