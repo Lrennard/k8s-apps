@@ -20,4 +20,4 @@ jobs:
       - name: Deploy Minecraft Server
         uses: actions-hub/kubectl@master
         with:
-          args: apply -f k8s-apps/minecraft/deployment.yaml
+          args: apply -f minecraft/deployment.yaml
