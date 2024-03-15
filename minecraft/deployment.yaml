@@ -60,6 +60,16 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: mc-data
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: iscsi
+        resources:
+          requests:
+            storage: 1Gi
 ---
 apiVersion: v1
 kind: Service
@@ -72,7 +82,7 @@ spec:
   ports:
     - port: 25565
       targetPort: 25565
-      nodePort: {{ secrets.MC_NODE_PORT }}
+      nodePort: 30065
   selector:
     app: mc-java
   type: NodePort

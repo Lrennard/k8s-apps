@@ -7,7 +7,7 @@ on:
 
 env: 
   KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
-  MC_NODE_PORT: ${{ secrets.MC_NODE_PORT }} 
+  #MC_NODE_PORT: ${{ secrets.MC_NODE_PORT }} 
 
 jobs:
   deploy:
