@@ -13,8 +13,6 @@ metadata:
 spec:
   replicas: 1
   serviceName: mc-java
-  nodeSelector:
-    cputype: amd64
   selector:
     matchLabels:
       app: mc-java
@@ -45,6 +43,8 @@ spec:
             initialDelaySeconds: 60
             periodSeconds: 10
             failureThreshold: 12
+      nodeSelector:
+        cputype: amd64
       volumes:
         - name: data
           persistentVolumeClaim:
