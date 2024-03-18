@@ -26,3 +26,10 @@ jobs:
         uses: actions-hub/kubectl@master
         with:
           args: apply -f uptime-kuma/deployment.yaml
+      
+      - name: Deploy Homepage
+        uses: actions-hub/kubectl@master
+        with:
+          args: |
+            apply -f homepage/deployment.yaml
+            apply -f homepage/config.yaml

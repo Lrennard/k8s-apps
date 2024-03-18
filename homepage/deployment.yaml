@@ -96,3 +96,18 @@ spec:
           #labelSelector:
            # matchLabels:
             #  app: homepage
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homepage
+  namespace: homepage
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 3000
+      nodePort: 30080
+      targetPort: http
+  selector:
+    app: homepage
