@@ -30,6 +30,6 @@ jobs:
       - name: Deploy Homepage
         uses: actions-hub/kubectl@master
         with:
-          args: |
+          args:
             apply -f homepage/deployment.yaml
             apply -f homepage/config.yaml
