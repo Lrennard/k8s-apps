@@ -21,3 +21,8 @@ jobs:
         uses: actions-hub/kubectl@master
         with:
           args: apply -f minecraft/deployment.yaml
+
+      - name: Deploy Uptime Kuma
+        uses: actions-hub/kubectl@master
+        with:
+          args: apply -f uptime-kuma/deployment.yaml

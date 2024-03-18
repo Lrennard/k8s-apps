@@ -1,3 +1,16 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: uptime-kuma-claim
+spec:
+  storageClassName: iscsi
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,7 +46,22 @@ spec:
         volumeMounts:
         - mountPath: /app/data
           name: uptime-kuma-content
+      nodeSelector:
+        cputype: amd64
       volumes:
       - name: uptime-kuma-content
         persistentVolumeClaim:
           claimName:  uptime-kuma-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uptime-kuma
+spec:
+  type: NodePort
+  ports:
+  - port: 3001
+    nodePort: 30010
+    targetPort: http
+  selector:
+    app: uptime-kuma
