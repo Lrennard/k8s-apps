@@ -44,7 +44,7 @@ spec:
             periodSeconds: 10
             failureThreshold: 12
       nodeSelector:
-        arch: amd64
+        kubernetes.io/arch: amd64
       volumes:
         - name: data
           persistentVolumeClaim:
