@@ -42,18 +42,21 @@ spec:
               value: "NORMAL"
             - name: MEMORY
               value: "6G"
-            - name: SIMULATION_DISTANCE
-              value: 12
-            - name: VIEW_DISTANCE
-              value: 20
+            - name: "SIMULATION_DISTANCE"
+              value: "16"
+            - name: "VIEW_DISTANCE"
+              value: "28"
             - name: ONLINE_MODE
               value: "FALSE"
             - name: PLUGINS
               value: |
                 https://download.luckperms.net/1534/bukkit/loader/LuckPerms-Bukkit-5.4.121.jar
-                https://github.com/EssentialsX/Essentials/releases/tag/2.20.1
+                https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsX-2.20.1.jar
+                https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXChat-2.20.1.jar
+                https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXSpawn-2.20.1.jar
                 https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
                 https://dev.bukkit.org/projects/thizzyz-tree-feller/files/latest
+                https://github.com/SkinsRestorer/SkinsRestorerX/releases/download/15.0.9/SkinsRestorer.jar
             - name: SPIGET_RESOURCES
               value: |
                 78766
