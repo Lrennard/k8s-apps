@@ -26,11 +26,11 @@ spec:
           imagePullPolicy: Always
           resources:
             requests:
-              memory: 4Gi  # Adjust based on your server's requirements
-              cpu: 2000m       # Adjust based on your server's requirements
+              memory: "12Gi" # Adjust based on your server's requirements
+              cpu: 5000m       # Adjust based on your server's requirements
             limits:
-              memory: "6Gi" # Adjust based on your server's requirements
-              cpu: 4000m       # Adjust based on your server's requirements
+              memory: "13Gi" # Adjust based on your server's requirements
+              cpu: 7000m       # Adjust based on your server's requirements
           env:
             - name: EULA
               value: "TRUE"
@@ -41,7 +41,7 @@ spec:
             - name: DIFFICULTY
               value: "NORMAL"
             - name: MEMORY
-              value: "6G"
+              value: "12G"
             - name: "SIMULATION_DISTANCE"
               value: "16"
             - name: "VIEW_DISTANCE"
@@ -57,15 +57,18 @@ spec:
                 https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
                 https://dev.bukkit.org/projects/thizzyz-tree-feller/files/latest
                 https://github.com/SkinsRestorer/SkinsRestorerX/releases/download/15.0.9/SkinsRestorer.jar
+                https://hangarcdn.papermc.io/plugins/LOOHP/ImageFrame/versions/1.7.7/PAPER/ImageFrame-1.7.7.0.jar
+                https://hangarcdn.papermc.io/plugins/HelpChat/PlaceholderAPI/versions/2.11.5/PAPER/PlaceholderAPI-2.11.5.jar
+                https://hangarcdn.papermc.io/plugins/Archy/AuraSkills/versions/2.0.6/PAPER/AuraSkills-2.0.6.jar
             - name: SPIGET_RESOURCES
               value: |
                 78766
                 40313
                 102931
-                74208
             - name: MODRINTH_PROJECTS
               value: |
                 veinminer:11brGK6s
+                itemsorter:xvHTRhZT
             - name: MODRINTH_DOWNLOAD_DEPENDENCIES
               value: "required"
             - name: TZ
