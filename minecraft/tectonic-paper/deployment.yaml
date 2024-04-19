@@ -1,0 +1,123 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: tectonic-paper
+  name: tectonic-paper
+  namespace: minecraft
+spec:
+  selector:
+    matchLabels:
+      app: tectonic-paper
+  replicas: 1
+  revisionHistoryLimit: 1
+  updateStrategy:
+    type: RollingUpdate
+  serviceName: tectonic-paper
+  template:
+    metadata:
+      labels:
+        app: tectonic-paper
+    spec:
+      containers:
+        - name: tectonic-paper
+          image: itzg/minecraft-server
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "3Gi"  # Adjust based on your server's requirements
+              cpu: 2000m       # Adjust based on your server's requirements
+            limits:
+              memory: "3Gi" # Adjust based on your server's requirements
+              cpu: 2000m       # Adjust based on your server's requirements
+          env:
+            - name: EULA
+              value: "TRUE"
+            - name: TYPE
+              value: "PAPER"
+            - name: VERSION
+              value: "1.20.4"
+            - name: DIFFICULTY
+              value: "NORMAL"
+            - name: MEMORY
+              value: "3G"
+            - name: "SIMULATION_DISTANCE"
+              value: "16"
+            - name: "VIEW_DISTANCE"
+              value: "28"
+            - name: "ALLOW_NETHER"
+              value: "FALSE"
+            - name: ONLINE_MODE
+              value: "FALSE"
+            - name: PLUGINS
+              value: |
+                https://download.luckperms.net/1534/bukkit/loader/LuckPerms-Bukkit-5.4.121.jar
+                https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsX-2.20.1.jar
+                https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXChat-2.20.1.jar
+                https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXSpawn-2.20.1.jar
+                https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
+                https://dev.bukkit.org/projects/thizzyz-tree-feller/files/latest
+                https://github.com/SkinsRestorer/SkinsRestorerX/releases/download/15.0.9/SkinsRestorer.jar
+                https://hangarcdn.papermc.io/plugins/LOOHP/ImageFrame/versions/1.7.7/PAPER/ImageFrame-1.7.7.0.jar
+                https://hangarcdn.papermc.io/plugins/HelpChat/PlaceholderAPI/versions/2.11.5/PAPER/PlaceholderAPI-2.11.5.jar
+            - name: SPIGET_RESOURCES
+              value: |
+                78766
+                40313
+                102931
+            - name: MODRINTH_PROJECTS
+              value: |
+                veinminer:11brGK6s
+                itemsorter:xvHTRhZT
+            - name: MODRINTH_DOWNLOAD_DEPENDENCIES
+              value: "required"
+            - name: TZ
+              value: "America/New_York"
+          volumeMounts:
+            - mountPath: /data
+              name: data
+          readinessProbe:
+            exec:
+              command:
+                - mc-monitor
+                - status
+                - --host
+                - localhost
+                - --port
+                - "25565"
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 12
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: tectonic-data
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: iscsi
+        resources:
+          requests:
+            storage: 100Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: tectonic-paper
+  name: tectonic-paper
+  namespace: minecraft
+spec:
+  ports:
+    - port: 25565
+      targetPort: 25565
+      nodePort: 30067
+  selector:
+    app: tectonic-paper
+  type: NodePort
