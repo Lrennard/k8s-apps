@@ -57,6 +57,8 @@ spec:
                 https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
                 https://dev.bukkit.org/projects/worldguard/files/4675318/download
                 https://dev.bukkit.org/projects/grief-prevention/files/5115771/download
+                https://hangarcdn.papermc.io/plugins/ViaVersion/ViaVersion/versions/4.9.3/PAPER/ViaVersion-4.9.3.jar
+                https://hangarcdn.papermc.io/plugins/ViaVersion/ViaBackwards/versions/4.9.2/PAPER/ViaBackwards-4.9.2.jar
                 https://get.discordsrv.com/
                 https://dev.bukkit.org/projects/thizzyz-tree-feller/files/latest
                 https://github.com/SkinsRestorer/SkinsRestorerX/releases/download/15.0.9/SkinsRestorer.jar
@@ -72,7 +74,6 @@ spec:
             - name: MODRINTH_PROJECTS
               value: |
                 veinminer:11brGK6s
-                itemsorter:xvHTRhZT
                 worldedit:JzCMkGax
             - name: MODRINTH_DOWNLOAD_DEPENDENCIES
               value: "required"
