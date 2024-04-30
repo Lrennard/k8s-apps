@@ -59,7 +59,7 @@ spec:
                 https://dev.bukkit.org/projects/grief-prevention/files/5115771/download
                 https://hangarcdn.papermc.io/plugins/ViaVersion/ViaVersion/versions/4.10.0/PAPER/ViaVersion-4.10.0.jar
                 https://hangarcdn.papermc.io/plugins/ViaVersion/ViaBackwards/versions/4.10.0/PAPER/ViaBackwards-4.10.0.jar
-                https://get.discordsrv.com/
+                https://github.com/TrueMB/DiscordNotify/releases/download/3.3.5/DiscordNotify-3.3.5.jar
                 https://dev.bukkit.org/projects/thizzyz-tree-feller/files/latest
                 https://github.com/SkinsRestorer/SkinsRestorer/releases/download/15.0.11/SkinsRestorer.jar
                 https://hangarcdn.papermc.io/plugins/HelpChat/PlaceholderAPI/versions/2.11.5/PAPER/PlaceholderAPI-2.11.5.jar
@@ -73,7 +73,7 @@ spec:
                 102931
             - name: MODRINTH_PROJECTS
               value: |
-                veinminer:11brGK6s
+                veinminer:KpfjqRyd
                 worldedit:JzCMkGax
                 quests.classic:BqJf8FRy
             - name: MODRINTH_DOWNLOAD_DEPENDENCIES
