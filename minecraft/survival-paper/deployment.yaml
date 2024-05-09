@@ -74,7 +74,7 @@ spec:
             - name: MODRINTH_PROJECTS
               value: |
                 veinminer:aEIcjoEO
-                worldedit:JzCMkGax
+                worldedit:j8KJp1Ch
                 quests.classic:BqJf8FRy
             - name: MODRINTH_DOWNLOAD_DEPENDENCIES
               value: "required"
