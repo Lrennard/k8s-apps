@@ -76,6 +76,7 @@ spec:
                 veinminer:aEIcjoEO
                 worldedit:j8KJp1Ch
                 quests.classic:BqJf8FRy
+                discordsrv:mr2CijyC
             - name: MODRINTH_DOWNLOAD_DEPENDENCIES
               value: "required"
             - name: TZ
