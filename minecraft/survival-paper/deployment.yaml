@@ -66,6 +66,7 @@ spec:
                 https://github.com/SkinsRestorer/SkinsRestorer/releases/download/15.0.12/SkinsRestorer.jar
                 https://hangarcdn.papermc.io/plugins/HelpChat/PlaceholderAPI/versions/2.11.5/PAPER/PlaceholderAPI-2.11.5.jar
                 https://hangarcdn.papermc.io/plugins/Archy/AuraSkills/versions/2.0.9/PAPER/AuraSkills-2.0.9.jar
+                https://github.com/Qveshn/LightAPI/releases/download/3.5.2/LightAPI-fork-3.5.2.jar
             - name: SPIGET_RESOURCES
               value: |
                 78766
