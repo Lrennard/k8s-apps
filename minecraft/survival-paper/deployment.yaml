@@ -50,7 +50,7 @@ spec:
               value: "FALSE"
             - name: PLUGINS
               value: |
-                https://download.luckperms.net/1540/bukkit/loader/LuckPerms-Bukkit-5.4.127.jar
+                https://download.luckperms.net/1541/bukkit/loader/LuckPerms-Bukkit-5.4.128.jar
                 https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsX-2.20.1.jar
                 https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXChat-2.20.1.jar
                 https://github.com/KaspianDev/AntiPopup/releases/download/bb3448e/AntiPopup-7.3-HOTFIX.jar
