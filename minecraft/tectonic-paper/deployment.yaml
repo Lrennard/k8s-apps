@@ -76,8 +76,9 @@ spec:
                 102931
             - name: MODRINTH_PROJECTS
               value: |
-                veinminer:11brGK6s
-                itemsorter:xvHTRhZT
+                veinminer:nxn7XLQe
+                worldedit:j8KJp1Ch
+                discordsrv:mr2CijyC
             - name: MODRINTH_DOWNLOAD_DEPENDENCIES
               value: "required"
             - name: TZ
