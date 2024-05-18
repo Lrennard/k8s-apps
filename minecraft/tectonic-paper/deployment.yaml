@@ -45,7 +45,7 @@ spec:
             - name: "SIMULATION_DISTANCE"
               value: "16"
             - name: "VIEW_DISTANCE"
-              value: "28"
+              value: "32"
             - name: "ALLOW_NETHER"
               value: "FALSE"
             - name: ONLINE_MODE
