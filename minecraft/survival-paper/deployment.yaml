@@ -48,6 +48,8 @@ spec:
               value: "32"
             - name: ONLINE_MODE
               value: "FALSE"
+            - name: MAX_PLAYERS
+              value: "80"
             - name: PLUGINS
               value: |
                 https://download.luckperms.net/1541/bukkit/loader/LuckPerms-Bukkit-5.4.128.jar
