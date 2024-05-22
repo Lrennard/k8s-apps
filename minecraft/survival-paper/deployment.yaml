@@ -48,6 +48,8 @@ spec:
               value: "32"
             - name: ONLINE_MODE
               value: "FALSE"
+            - name: DEBUG
+              value: "TRUE"
             - name: MAX_PLAYERS
               value: "80"
             - name: PLUGINS
@@ -55,7 +57,6 @@ spec:
                 https://download.luckperms.net/1541/bukkit/loader/LuckPerms-Bukkit-5.4.128.jar
                 https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsX-2.20.1.jar
                 https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXChat-2.20.1.jar
-                https://github.com/KaspianDev/AntiPopup/releases/download/bb3448e/AntiPopup-7.3-HOTFIX.jar
                 https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXSpawn-2.20.1.jar
                 https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
                 https://dev.bukkit.org/projects/worldguard/files/4675318/download
@@ -63,15 +64,13 @@ spec:
                 https://hangarcdn.papermc.io/plugins/pop4959/Chunky/versions/1.4.10/PAPER/Chunky-1.4.10.jar
                 https://hangarcdn.papermc.io/plugins/ViaVersion/ViaVersion/versions/4.10.2/PAPER/ViaVersion-4.10.2.jar
                 https://hangarcdn.papermc.io/plugins/ViaVersion/ViaBackwards/versions/4.10.2/PAPER/ViaBackwards-4.10.2.jar
-                https://github.com/TrueMB/DiscordNotify/releases/download/3.3.5/DiscordNotify-3.3.5.jar
                 https://dev.bukkit.org/projects/thizzyz-tree-feller/files/latest
                 https://github.com/SkinsRestorer/SkinsRestorer/releases/download/15.0.12/SkinsRestorer.jar
-                https://hangarcdn.papermc.io/plugins/HelpChat/PlaceholderAPI/versions/2.11.5/PAPER/PlaceholderAPI-2.11.5.jar
+                https://hangarcdn.papermc.io/plugins/HelpChat/PlaceholderAPI/versions/2.11.6/PAPER/PlaceholderAPI-2.11.6.jar
                 https://hangarcdn.papermc.io/plugins/Archy/AuraSkills/versions/2.0.9/PAPER/AuraSkills-2.0.9.jar
                 https://github.com/Qveshn/LightAPI/releases/download/3.5.2/LightAPI-fork-3.5.2.jar
             - name: SPIGET_RESOURCES
               value: |
-                78766
                 74188
                 40313
             - name: MODRINTH_PROJECTS
@@ -80,6 +79,7 @@ spec:
                 worldedit:j8KJp1Ch
                 quests.classic:BqJf8FRy
                 discordsrv:mr2CijyC
+                papiproxybridge:RXXUN9SA
             - name: MODRINTH_DOWNLOAD_DEPENDENCIES
               value: "required"
             - name: TZ
