@@ -26,10 +26,10 @@ spec:
           imagePullPolicy: Always
           resources:
             requests:
-              memory: "12Gi" # Adjust based on your server's requirements
+              memory: "16Gi" # Adjust based on your server's requirements
               cpu: 5000m       # Adjust based on your server's requirements
             limits:
-              memory: "13Gi" # Adjust based on your server's requirements
+              memory: "18Gi" # Adjust based on your server's requirements
               cpu: 7000m       # Adjust based on your server's requirements
           env:
             - name: EULA
@@ -37,11 +37,11 @@ spec:
             - name: TYPE
               value: "PAPER"
             - name: VERSION
-              value: "1.20.4"
+              value: "1.20.6"
             - name: DIFFICULTY
               value: "HARD"
             - name: MEMORY
-              value: "12G"
+              value: "16G"
             - name: "SIMULATION_DISTANCE"
               value: "16"
             - name: "VIEW_DISTANCE"
@@ -49,37 +49,40 @@ spec:
             - name: ONLINE_MODE
               value: "FALSE"
             - name: DEBUG
-              value: "TRUE"
+              value: "FALSE"
             - name: MAX_PLAYERS
               value: "80"
             - name: PLUGINS
               value: |
-                https://download.luckperms.net/1541/bukkit/loader/LuckPerms-Bukkit-5.4.128.jar
-                https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsX-2.20.1.jar
-                https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXChat-2.20.1.jar
-                https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsXSpawn-2.20.1.jar
+                https://download.luckperms.net/1543/bukkit/loader/LuckPerms-Bukkit-5.4.130.jar
+                https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsX-2.21.0-dev+93-3a6fdd9.jar
+                https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsXChat-2.21.0-dev+93-3a6fdd9.jar
+                https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsXSpawn-2.21.0-dev+93-3a6fdd9.jar
                 https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
-                https://dev.bukkit.org/projects/worldguard/files/4675318/download
-                https://dev.bukkit.org/projects/grief-prevention/files/5301423/download
-                https://hangarcdn.papermc.io/plugins/pop4959/Chunky/versions/1.4.10/PAPER/Chunky-1.4.10.jar
+                https://dev.bukkit.org/projects/worldguard/files/latest
+                https://dev.bukkit.org/projects/grief-prevention/files/latest
                 https://hangarcdn.papermc.io/plugins/ViaVersion/ViaVersion/versions/4.10.2/PAPER/ViaVersion-4.10.2.jar
                 https://hangarcdn.papermc.io/plugins/ViaVersion/ViaBackwards/versions/4.10.2/PAPER/ViaBackwards-4.10.2.jar
                 https://dev.bukkit.org/projects/thizzyz-tree-feller/files/latest
                 https://github.com/SkinsRestorer/SkinsRestorer/releases/download/15.0.12/SkinsRestorer.jar
                 https://hangarcdn.papermc.io/plugins/HelpChat/PlaceholderAPI/versions/2.11.6/PAPER/PlaceholderAPI-2.11.6.jar
-                https://hangarcdn.papermc.io/plugins/Archy/AuraSkills/versions/2.0.9/PAPER/AuraSkills-2.0.9.jar
+                https://hangarcdn.papermc.io/plugins/Archy/AuraSkills/versions/2.1.2/PAPER/AuraSkills-2.1.2.jar
                 https://github.com/Qveshn/LightAPI/releases/download/3.5.2/LightAPI-fork-3.5.2.jar
             - name: SPIGET_RESOURCES
               value: |
                 74188
                 40313
+                59773
             - name: MODRINTH_PROJECTS
               value: |
                 veinminer:nxn7XLQe
-                worldedit:j8KJp1Ch
-                quests.classic:BqJf8FRy
+                worldedit:VaMk0SQH
+                quests.classic:9aib87oe
                 discordsrv:mr2CijyC
                 papiproxybridge:RXXUN9SA
+                dynmap:CeFY2xAD
+                chunky:ZrmnYk7q
+                invsee++:GoiUaKNC
             - name: MODRINTH_DOWNLOAD_DEPENDENCIES
               value: "required"
             - name: TZ
@@ -125,9 +128,14 @@ metadata:
   namespace: minecraft
 spec:
   ports:
-    - port: 25565
+    - name: game
+      port: 25565
       targetPort: 25565
       nodePort: 30065
+    - name: web 
+      port: 8123
+      targetPort: 8123
+      nodePort: 30123
   selector:
     app: survival-paper
   type: NodePort
