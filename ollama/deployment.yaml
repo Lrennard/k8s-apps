@@ -23,17 +23,19 @@ spec:
         image: ollama/ollama:latest
         resources:
           requests:
-            cpu: 4000m
+            cpu: 5500m
             memory: 32Gi
             nvidia.com/gpu: 1
+            ephemeral-storage: 13Gi
           limits:
-            cpu: 7000m
-            memory: 42Gi
+            cpu: 5500m
+            memory: 32Gi
             nvidia.com/gpu: 1 # requesting 1 GPU
+            ephemeral-storage: 15Gi
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         volumeMounts:
-          - mountPath: /.ollama
+          - mountPath: /root/.ollama
             name: ollama-storage
         ports:
         - name: http
