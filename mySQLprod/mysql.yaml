@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: database
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-prodpvc
+  namespace: database
+spec:
+  storageClassName: iscsi
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-prod
+  namespace: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-prod
+  template:
+    metadata:
+      labels:
+        app: mysql-prod
+    spec:
+      containers:
+      - image: mysql:lts
+        name: mysqlprod
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-prodsecret
+              key: root-pass
+        - name: CHARACTER_SET_SERVER
+          value: utf8mb4
+        - name: COLLATION_SERVER
+          value: utf8mb4_unicode_ci
+        - name: MYSQL_QUERY_CACHE_SIZE
+          value: 128M
+        ports:
+        - name: mysql-prod
+          containerPort: 3306
+        volumeMounts:
+        - mountPath: "/var/lib/mysql"
+          name: mysql-persistent-storage
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-prodpvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysqlprodsvc
+  namespace: database
+spec:
+  type: NodePort
+  ports:
+  - port: 3306
+    protocol: TCP
+  selector:
+    app: mysql-prod
