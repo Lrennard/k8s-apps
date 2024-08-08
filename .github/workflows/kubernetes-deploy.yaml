@@ -36,3 +36,8 @@ jobs:
         uses: actions-hub/kubectl@master
         with:
           args: apply -f homepage/config.yaml
+      
+      - name: Deploy Ollama
+        uses: actions-hub/kubectl@master
+        with:
+          args: apply -f ollama/deployment.yaml
