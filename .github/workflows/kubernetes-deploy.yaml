@@ -13,31 +13,41 @@ jobs:
   deploy:
     runs-on: self-hosted
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    #steps:
+      #- name: Checkout code
+      #  uses: actions/checkout@v2
 
       #- name: Deploy Minecraft Server
       #  uses: actions-hub/kubectl@master
       #  with:
       #    args: apply -f minecraft/deployment.yaml
 
-      - name: Deploy Uptime Kuma
-        uses: actions-hub/kubectl@master
-        with:
-          args: apply -f uptime-kuma/deployment.yaml
+      #- name: Deploy Uptime Kuma
+      #  uses: actions-hub/kubectl@master
+      #  with:
+      #    args: apply -f uptime-kuma/deployment.yaml
       
-      - name: Deploy Homepage Manifest
-        uses: actions-hub/kubectl@master
-        with:
-          args: apply -f homepage/deployment.yaml
+      #- name: Deploy Homepage Manifest
+      #  uses: actions-hub/kubectl@master
+      #  with:
+      #    args: apply -f homepage/deployment.yaml
       
-      - name: Deploy Homepage Config
-        uses: actions-hub/kubectl@master
-        with:
-          args: apply -f homepage/config.yaml
+      #- name: Deploy Homepage Config
+      #  uses: actions-hub/kubectl@master
+      #  with:
+      #    args: apply -f homepage/config.yaml
       
-      - name: Deploy Ollama
-        uses: actions-hub/kubectl@master
-        with:
-          args: apply -f ollama/deployment.yaml
+      #- name: Deploy Ollama
+      #  uses: actions-hub/kubectl@master
+      #  with:
+      #    args: apply -f ollama/deployment.yaml
+
+      #- name: Deploy Mysql-Production
+      #  uses: actions-hub/kubectl@master
+      #  with:
+      #    args: apply -f mySQLprod/mysql.yaml
+        
+      #- name: Deploy Traefik
+      #  uses: actions-hub/kubectl@master
+      #  with:
+      #    args: apply -f traefik/
