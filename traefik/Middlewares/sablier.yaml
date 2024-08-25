@@ -1,0 +1,17 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+    name: my-sablier
+spec:
+    plugin:
+        sablier:
+            dynamic:
+                displayName: My Title
+                refreshFrequency: 5s
+                showDetails: "true"
+                theme: hacker-terminal
+            group: default
+            names: grafana
+            sablierUrl: http://sablier:10000
+            sessionDuration: 1m
+
